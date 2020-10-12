@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    <style>
+        * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+  }
+  
+  /* Center website */
+  .main {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+    color: rgb(199, 131, 5);
+  }
+  h2{
+      color:rgb(172, 118, 17);
+      font-size: 30px;
+  }
+  h4{
+    color: rgb(165, 165, 165);
+      font-size: 14px;
+  }
+  .column {
+    margin: 20px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+  }
+  
+  
+  /* Content */
+  .content {
+    background-color: #eee;
+    min-width: 400px;
+    padding: 18px;
+    box-shadow: 0 4px 8px 0 rgba(199, 152, 0, 0.2), 0 6px 20px 0 rgba(158, 116, 2, 0.19);
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: 1px orange;
+    border-radius: 30px;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: rgb(189, 163, 117);
+  }
+  
+  .btn .active , .showall{
+    background-color: rgb(233, 165, 40);
+    color: white;
+  }
+  .events-date{
+      margin-left: 140px;
+      padding: 14px;
+      width: 70px;
+      background-color: #222;
+
+  }
+  .events-date a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+  }
+    </style>
+</head>
+<body>
+    <h1 class="text-center ">All Events</h1>
+    <hr>
+    <br><br>
+<div id="myBtnContainer">
+  <button class="btn filter-button active showall" data-filter="all"> Show all</button>
+  <button class="btn filter-button" data-filter="hdpe">Social Event</button>
+  <button class="btn filter-button" data-filter="spray">Academic Event</button>
+  <button class="btn filter-button" data-filter="irrigation">Sports Event</button>
+</div>
+
+<br>
+<div class="column filter text-center justify-content-center hdpe">
+    <div class="content">
+        <div class="events-date text-uppercase text-center">
+            <a class="text-white" href="#">Sept
+                <span>10</span>
+            </a>
+        </div>
+      
+      <div><h2>Live Interaction with 
+          <br>Dr. Harsh Mehta</h2></div> 
+      <br>
+      <div><h4>10 AM</h4></div>
+    </div>
+  </div>
+
+  <div class="column filter text-center justify-content-center spray">
+    <div class="content">
+        <div class="events-date text-uppercase text-center">
+            <a class="text-white" href="#">Sept
+                <span>12</span>
+            </a>
+        </div>
+      
+      <div><h2>Story-tellilng compititon</h2></div> 
+      <br>
+      <div><h4>14:30 PM</h4></div>
+    </div>
+  </div>
+
+  <div class="column filter text-center justify-content-center hdpe">
+    <div class="content">
+        <div class="events-date text-uppercase text-center">
+            <a class="text-white" href="#">Sept
+                <span>12</span>
+            </a>
+        </div>
+      
+      <div><h2>Finale - Magnitude 2.0</h2></div> 
+      <br>
+      <div><h4>11 AM</h4></div>
+    </div>
+  </div>
+
+  <div class="column filter text-center justify-content-center spray">
+    <div class="content">
+        <div class="events-date text-uppercase text-center">
+            <a class="text-white" href="#">Sept
+                <span>15</span>
+            </a>
+        </div>
+      
+      <div><h2>AWS Challenge Conference</h2></div> 
+      <br>
+      <div><h4>10 AM</h4></div>
+    </div>
+  </div>
+
+  <div class="column filter text-center justify-content-center spray">
+    <div class="content">
+        <div class="events-date text-uppercase text-center">
+            <a class="text-white" href="#">Sept
+                <span>13</span>
+            </a>
+        </div>
+      
+      <div><h2> Cloud City Expo</h2></div> 
+      <br>
+      <div><h4>12 PM</h4></div>
+    </div>
+  </div>
+
+  <div class="column filter text-center justify-content-center spray">
+    <div class="content">
+        <div class="events-date text-uppercase text-center">
+            <a class="text-white" href="#">Sept
+                <span>14</span>
+            </a>
+        </div>
+      
+      <div><h2>Blog Writing compititon</h2></div> 
+      <br>
+      <div><h4>16:00 PM</h4></div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+$(".filter-button").click(function(){
+    var value = $(this).attr('data-filter');
+    
+    if(value == "all")
+    {
+        //$('.filter').removeClass('hidden');
+        $('.filter').show('1000');
+    }
+    else
+    {
+//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+        $(".filter").not('.'+value).hide('3000');
+        $('.filter').filter('.'+value).show('3000');
+        
+    }
+});
+
+if ($(".filter-button").removeClass("active")) {
+$(this).removeClass("active");
+}
+$(this).addClass("active");
+
+});
+</script>
+</body>
+</html>

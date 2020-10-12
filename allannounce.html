@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    <style>
+        * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+  }
+  
+  /* Center website */
+  .main {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 50px;
+    word-break: break-all;
+    color: rgb(199, 131, 5);
+  }
+  h2{
+      color:rgb(172, 118, 17);
+      font-size: 30px;
+  }
+  h4{
+      color:rgb(116, 115, 115);
+      font-style: italic;
+  }
+  p{
+      color: rgb(165, 165, 165);
+      font-size: 14px;
+  }
+  .column {
+    margin: 12px;
+  }
+  
+  
+  /* Content */
+  .content {
+    background-color: #eee;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(199, 152, 0, 0.2), 0 6px 20px 0 rgba(158, 116, 2, 0.19);
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: 1px orange;
+    border-radius: 30px;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: rgb(189, 163, 117);
+  }
+  
+  .btn .active , .showall{
+    background-color: rgb(233, 165, 40);
+    color: white;
+  }
+    </style>
+</head>
+<body>
+    <h1 class="text-center ">All Announcement</h1>
+    <hr>
+    <br><br>
+<div id="myBtnContainer">
+  <button class="btn filter-button active showall" data-filter="all"> Show all</button>
+  <button class="btn filter-button" data-filter="hdpe">Student welfare</button>
+  <button class="btn filter-button" data-filter="spray">Placement</button>
+  <button class="btn filter-button" data-filter="irrigation">Academic</button>
+</div>
+
+<br>
+<div class="column filter spray">
+    <div class="content">
+        <h2>Required Interns for TULIP (The Urban Learning internship Programme) under Smart City Programme</h2>
+      
+      <h4>Community Service Cell, Division of Student welfare provide an opportunity to work on TULIP.
+          Community Service Cell, Division of Student welfare provide an opportunity to work on TULIP.</h4>
+      <br>
+      <p>DepartMent of placment
+          <br> 
+          August 30, 2020
+      </p>
+    </div>
+  </div>
+
+  <div class="column filter hdpe">
+    <div class="content">
+        <h2>Free Counseling from Psychologists from Counseling & Happiness Cell</h2>
+      
+      <h4>Humans are hard wired for connection. Humans are hard wired for connection</h4><br>
+      <p>DepartMent of student welfare
+        <br> 
+        August 30, 2020
+    </p>
+    </div>
+  </div>
+  <div class="column filter hdpe">
+    <div class="content">
+        <h2> Join National Service Scheme - NSS Batch 2020-21</h2>
+      
+      <h4>LPU-NSS is just not a department, it is the biggest joint family of Lovely Professional University.
+        Join National Service Scheme - NSS Batch 2020-21
+      </h4><br>
+      <p>DepartMent of student welfare
+        <br> 
+        August 30, 2020
+    </p>
+    </div>
+  </div>
+
+  <div class="column filter hdpe">
+    <div class="content">
+        <h2>Maintain Your Emotional Wellbeing During COVID 19 Distress Counseling & Happiness cell In Collaboration with YourDOST – free Online counseling Service</h2>
+     
+      <h4>Dear LPU community,
+        Hope you're safe and well.
+    <br> Maintain Your Emotional Wellbeing During COVID 19 Distress Counseling & Happiness cell In Collaboration with YourDOST – free Online counseling Service
+</h4><br>
+        <p>DepartMent of student welfare 
+            <br> 
+            August 30, 2020
+        </p>
+    </div>
+  </div>
+  <div class="column filter hdpe">
+    <div class="content">
+        <h2>Selection Trails for columning(M/W) Team</h2>
+     
+      <h4>Department of Sports is going to conduct trails for selection of columning(M/W) Team for AIU Event.</h4><br>
+      <p>DepartMent of student welfare
+        <br> 
+        August 30, 2020
+    </p>
+    </div>
+  </div>
+  <div class="column filter irrigation">
+    <div class="content">
+        <h2>Important information regarding Mid Term Examination, Autumn Term, 2020-21</h2>
+     
+      <h4>It is for the information of all students,2nd year and onwards, that their Mid Term Tests shall start from 15th September, 2020.Autumn Term, 2020-21</h4>
+      <p>DepartMent of student welfare
+        <br> 
+        August 30, 2020
+    </p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+<script>
+$(document).ready(function(){
+
+$(".filter-button").click(function(){
+    var value = $(this).attr('data-filter');
+    
+    if(value == "all")
+    {
+        //$('.filter').removeClass('hidden');
+        $('.filter').show('1000');
+    }
+    else
+    {
+//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+        $(".filter").not('.'+value).hide('3000');
+        $('.filter').filter('.'+value).show('3000');
+        
+    }
+});
+
+if ($(".filter-button").removeClass("active")) {
+$(this).removeClass("active");
+}
+$(this).addClass("active");
+
+});
+</script>
+</body>
+</html>
